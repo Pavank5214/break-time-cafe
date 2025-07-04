@@ -1,3 +1,11 @@
+/* Utility Functions */
+function toggleElement(element, show, ariaHidden = false) {
+    element.style.display = show ? 'flex' : 'none';
+    if (ariaHidden !== false) {
+        element.setAttribute('aria-hidden', !show);
+    }
+}
+
 /* Navigation Functions */
 function initSmoothScroll() {
     document.querySelectorAll('.nav-links a').forEach(anchor => {
@@ -8,8 +16,9 @@ function initSmoothScroll() {
                 behavior: 'smooth'
             });
             document.querySelector('.nav-links').classList.remove('active');
-            document.querySelector('.hamburger').classList.remove('active');
-            document.querySelector('.hamburger').setAttribute('aria-expanded', 'false');
+            const hamburger = document.querySelector('.hamburger');
+            hamburger.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', 'false');
         });
     });
 }
@@ -19,10 +28,10 @@ function initHamburgerMenu() {
     const navLinks = document.querySelector('.nav-links');
 
     hamburger.addEventListener('click', () => {
+        const isActive = !navLinks.classList.contains('active');
         navLinks.classList.toggle('active');
         hamburger.classList.toggle('active');
-        const isExpanded = hamburger.classList.contains('active');
-        hamburger.setAttribute('aria-expanded', isExpanded);
+        hamburger.setAttribute('aria-expanded', isActive);
     });
 
     document.addEventListener('click', (e) => {
@@ -32,45 +41,64 @@ function initHamburgerMenu() {
             hamburger.setAttribute('aria-expanded', 'false');
         }
     });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            hamburger.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', 'false');
+        }
+    });
 }
 
 /* Form Handling */
-function initContactForm() {
-    const form = document.getElementById('contact-form');
+function initForms() {
+    const contactForm = document.getElementById('contact-form');
+    const newsletterForm = document.getElementById('newsletter-form');
     const modal = document.getElementById('form-modal');
     const modalClose = document.querySelector('.modal-close');
+    const formError = document.getElementById('form-error');
 
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const formData = new FormData(this);
-        const name = formData.get('name');
-        const email = formData.get('email');
-        const message = formData.get('message');
+    function handleFormSubmit(form, isNewsletter = false) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const email = formData.get('email');
+            const name = formData.get('name') || '';
+            const message = formData.get('message') || '';
 
-        if (name && email && message) {
-            console.log('Form Submitted:', { name, email, message });
-            modal.style.display = 'flex';
-            modal.setAttribute('aria-hidden', 'false');
-            this.reset();
-        }
-    });
+            if (email && (!isNewsletter || email) && (!name || name.trim()) && (!message || message.trim())) {
+                console.log(isNewsletter ? 'Newsletter Subscribed:' : 'Form Submitted:', { name, email, message });
+                toggleElement(modal, true, true);
+                modal.querySelector('p').textContent = isNewsletter 
+                    ? 'Thank you for subscribing! Stay tuned for updates.'
+                    : 'Thank you for your message! We’ll respond within 24 hours.';
+                this.reset();
+                formError.style.display = 'none';
+            } else {
+                formError.style.display = 'block';
+                formError.textContent = 'Please fill out all required fields correctly.';
+            }
+        });
+    }
 
-    modalClose.addEventListener('click', () => {
-        modal.style.display = 'none';
-        modal.setAttribute('aria-hidden', 'true');
-    });
+    handleFormSubmit(contactForm);
+    handleFormSubmit(newsletterForm, true);
 
+    modalClose.addEventListener('click', () => toggleElement(modal, false, true));
     modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.style.display = 'none';
-            modal.setAttribute('aria-hidden', 'true');
+        if (e.target === modal) toggleElement(modal, false, true);
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.style.display === 'flex') {
+            toggleElement(modal, false, true);
         }
     });
 }
 
 /* Lazy Load Images */
 function initLazyLoad() {
-    const images = document.querySelectorAll('.gallery img');
+    const images = document.querySelectorAll('.gallery img, .specials img');
     const options = {
         rootMargin: '0px',
         threshold: 0.1
@@ -118,12 +146,47 @@ function initPreloader() {
     });
 }
 
+/* Cookie Consent */
+function initCookieConsent() {
+    const cookieConsent = document.getElementById('cookie-consent');
+    const acceptButton = document.getElementById('cookie-accept');
+
+    if (!localStorage.getItem('cookieConsent')) {
+        toggleElement(cookieConsent, true, true);
+    }
+
+    acceptButton.addEventListener('click', () => {
+        localStorage.setItem('cookieConsent', 'accepted');
+        toggleElement(cookieConsent, false, true);
+    });
+}
+
+/* Dark Mode Toggle */
+function initDarkMode() {
+    const toggleButton = document.getElementById('dark-mode-toggle');
+    const body = document.body;
+
+    if (localStorage.getItem('darkMode') === 'enabled') {
+        body.classList.add('dark-mode');
+        toggleButton.querySelector('.icon').textContent = '☀️';
+    }
+
+    toggleButton.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        const isDark = body.classList.contains('dark-mode');
+        toggleButton.querySelector('.icon').textContent = isDark ? '☀️' : '🌙';
+        localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
+    });
+}
+
 /* Initialize All Functions */
 document.addEventListener('DOMContentLoaded', () => {
     initSmoothScroll();
     initHamburgerMenu();
-    initContactForm();
+    initForms();
     initLazyLoad();
     initBackToTop();
     initPreloader();
+    initCookieConsent();
+    initDarkMode();
 });

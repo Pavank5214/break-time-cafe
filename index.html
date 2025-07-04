@@ -13,11 +13,32 @@
     <meta property="og:image" content="/assets/og-image.jpg">
     <meta property="og:url" content="https://breaktimecafe.com">
     <meta property="og:type" content="website">
+    <!-- Structured Data for SEO -->
+    <script type="application application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CafeOrCoffeeShop",
+        "name": "Break Time Cafe",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "123 Coffee Street",
+            "addressLocality": "Cityville",
+            "addressRegion": "ST",
+            "postalCode": "12345",
+            "addressCountry": "US"
+        },
+        "telephone": "+1234567890",
+        "openingHours": "Mo-Fr 07:00-19:00, Sa-Su 08:00-18:00",
+        "servesCuisine": "Cafe",
+        "url": "https://breaktimecafe.com"
+    }
+    </script>
     <title>Break Time Cafe - Cozy Coffee & Pastries in Cityville</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
     <link rel="manifest" href="/manifest.json">
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Open+Sans:wght@400;600&display=swap" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="/assets/hero-bg.jpg" as="image">
 </head>
 <body>
     <!-- Preloader -->
@@ -25,19 +46,32 @@
         <div class="spinner"></div>
     </div>
 
+    <!-- Cookie Consent Popup -->
+    <div id="cookie-consent" class="cookie-consent" role="dialog" aria-hidden="true">
+        <div class="cookie-content">
+            <p>We use cookies to enhance your experience. <a href="/privacy-policy" aria-label="Read our privacy policy">Learn more</a>.</p>
+            <button id="cookie-accept" class="btn" aria-label="Accept cookies">Accept</button>
+        </div>
+    </div>
+
     <!-- Navigation Bar -->
     <nav class="navbar" aria-label="Main navigation">
         <div class="logo">Break Time Cafe</div>
         <ul class="nav-links" aria-label="Navigation menu">
             <li><a href="#home" aria-label="Go to Home">Home</a></li>
+            <li><a href="#specials" aria-label="Go to Today’s Specials">Specials</a></li>
             <li><a href="#menu" aria-label="Go to Menu">Menu</a></li>
             <li><a href="#gallery" aria-label="Go to Gallery">Gallery</a></li>
+            <li><a href="#testimonials" aria-label="Go to Testimonials">Testimonials</a></li>
             <li><a href="#contact" aria-label="Go to Contact">Contact</a></li>
         </ul>
         <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
             <span></span>
             <span></span>
             <span></span>
+        </button>
+        <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
+            <span class="icon">🌙</span>
         </button>
     </nav>
 
@@ -46,7 +80,27 @@
         <div class="hero-content">
             <h1>Welcome to Break Time Cafe</h1>
             <p>Savor artisan coffee, freshly baked pastries, and a warm ambiance in Cityville’s favorite cozy spot.</p>
-            <a href="#menu" class="btn" aria-label="View our menu">View Our Menu</a>
+            <div class="hero-buttons">
+                <a href="#menu" class="btn" aria-label="View our menu">View Our Menu</a>
+                <a href="https://order.toasttab.com" class="btn btn-secondary" target="_blank" aria-label="Order online">Order Online</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Today’s Specials Section -->
+    <section id="specials" class="specials" aria-label="Today’s Specials">
+        <h2>Today’s Specials</h2>
+        <div class="specials-container">
+            <div class="special-item">
+                <img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0" alt="Pumpkin Spice Latte" loading="lazy">
+                <h3>Pumpkin Spice Latte</h3>
+                <p>Seasonal favorite with cinnamon and nutmeg. <span>$4.75</span></p>
+            </div>
+            <div class="special-item">
+                <img src="https://images.unsplash.com/photo-1511920170033-f8396924c312" alt="Breakfast Burrito" loading="lazy">
+                <h3>Breakfast Burrito</h3>
+                <p>Eggs, avocado, and salsa in a warm tortilla. <span>$6.50</span></p>
+            </div>
         </div>
     </section>
 
@@ -107,10 +161,37 @@
     <section id="gallery" class="gallery" aria-label="Photo Gallery">
         <h2>Our Ambiance</h2>
         <div class="gallery-container">
-            <img data-src="https://images.unsplash.com/photo-1512568400610-62da28bc8a13" alt="Cozy cafe interior with wooden tables" loading="lazy">
-            <img data-src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" alt="Steaming coffee cup" loading="lazy">
-            <img data-src="https://images.unsplash.com/photo-1495474472287-3948e6b97d88" alt="Freshly baked pastries" loading="lazy">
-            <img data-src="https://images.unsplash.com/photo-1498804103079-a6351b050096" alt="Cafe counter with barista" loading="lazy">
+            <picture>
+                <source srcset="/assets/cafe-interior-small.jpg" media="(max-width: 480px)">
+                <img data-src="https://images.unsplash.com/photo-1512568400610-62da28bc8a13" alt="Cozy cafe interior with wooden tables" loading="lazy">
+            </picture>
+            <picture>
+                <source srcset="/assets/coffee-cup-small.jpg" media="(max-width: 480px)">
+                <img data-src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" alt="Steaming coffee cup" loading="lazy">
+            </picture>
+            <picture>
+                <source srcset="/assets/pastries-small.jpg" media="(max-width: 480px)">
+                <img data-src="https://images.unsplash.com/photo-1495474472287-3948e6b97d88" alt="Freshly baked pastries" loading="lazy">
+            </picture>
+            <picture>
+                <source srcset="/assets/counter-small.jpg" media="(max-width: 480px)">
+                <img data-src="https://images.unsplash.com/photo-1498804103079-a6351b050096" alt="Cafe counter with barista" loading="lazy">
+            </picture>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials" aria-label="Customer Testimonials">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonials-container">
+            <div class="testimonial">
+                <p>“Best coffee in Cityville! The atmosphere is so welcoming.”</p>
+                <span>- Sarah M.</span>
+            </div>
+            <div class="testimonial">
+                <p>“Love their avocado toast and friendly staff!”</p>
+                <span>- John D.</span>
+            </div>
         </div>
     </section>
 
@@ -134,13 +215,14 @@
             </div>
             <div class="contact-form">
                 <h3>Send a Message</h3>
-                <form id="contact-form" aria-label="Contact form">
+                <form id="contact-form" aria-label="Contact form" aria-live="polite">
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" placeholder="Your Name" required>
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" placeholder="Your Email" required>
                     <label for="message">Message</label>
                     <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                    <div id="form-error" class="form-error" role="alert"></div>
                     <button type="submit" class="btn" aria-label="Submit message">Send Message</button>
                 </form>
             </div>
@@ -161,19 +243,27 @@
     <!-- Form Submission Modal -->
     <div id="form-modal" class="modal" role="dialog" aria-hidden="true">
         <div class="modal-content">
-            <span class="modal-close" aria-label="Close modal">&times;</span>
-            <p>Thank you for your message! We’ll respond within 24 hours.</p>
+            <span class="modal-close" aria-label="Close modal">×</span>
+            <p aria-live="polite">Thank you for your message! We’ll respond within 24 hours.</p>
         </div>
     </div>
 
     <!-- Footer -->
     <footer>
+        <div class="newsletter">
+            <h3>Stay Updated</h3>
+            <form id="newsletter-form" aria-label="Newsletter signup form">
+                <label for="newsletter-email">Email</label>
+                <input type="email" id="newsletter-email" name="email" placeholder="Your Email" required>
+                <button type="submit" class="btn" aria-label="Subscribe to newsletter">Subscribe</button>
+            </form>
+        </div>
         <p>© 2025 Break Time Cafe. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>
     <script>
-        // Register Service Worker for PWA
+        // Register Service Worker
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('/service-worker.js')
                 .then(reg => console.log('Service Worker registered'))

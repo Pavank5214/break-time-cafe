@@ -17,5 +17,12 @@
             "sizes": "512x512",
             "type": "image/png"
         }
+    ],
+    "screenshots": [
+        {
+            "src": "/assets/screenshot-mobile.jpg",
+            "sizes": "720x1280",
+            "type": "image/jpeg"
+        }
     ]
 }
