@@ -232,11 +232,11 @@ body.dark-mode {
 
 .btn-secondary {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
-    border: 2px solid var(--accent-color);
+    border: 2px solid var(--secondary-color);
 }
 
 .btn-secondary:hover, .btn-secondary:focus {
-    background-color: #cc0000;
+    background-color: #b8860b;
 }
 
 /* Specials Section */
@@ -777,4 +777,3 @@ body.dark-mode .modal-content {
         left: 5%;
     }
 }
-
