@@ -231,7 +231,7 @@ body.dark-mode {
 }
 
 .btn-secondary {
-    background-color: var(--accent-color);
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
     border: 2px solid var(--accent-color);
 }
 
@@ -777,3 +777,4 @@ body.dark-mode .modal-content {
         left: 5%;
     }
 }
+
