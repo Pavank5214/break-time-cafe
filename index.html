@@ -1,46 +1,57 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Break Time Cafe - Your cozy neighborhood cafe serving artisan coffee, fresh pastries, and hearty meals in Cityville.">
+    <meta name="description" content="Break Time Cafe - Your cozy neighborhood cafe in Cityville serving artisan coffee, fresh pastries, and hearty meals.">
     <meta name="keywords" content="Break Time Cafe, coffee shop, pastries, Cityville cafe, breakfast, lunch, coffee">
     <meta name="author" content="Break Time Cafe">
     <meta name="robots" content="index, follow">
+    <!-- Open Graph for Social Media -->
+    <meta property="og:title" content="Break Time Cafe - Cozy Coffee & Pastries">
+    <meta property="og:description" content="Visit Break Time Cafe in Cityville for artisan coffee, fresh pastries, and a warm ambiance.">
+    <meta property="og:image" content="/assets/og-image.jpg">
+    <meta property="og:url" content="https://breaktimecafe.com">
+    <meta property="og:type" content="website">
     <title>Break Time Cafe - Cozy Coffee & Pastries in Cityville</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="/manifest.json">
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+
     <!-- Navigation Bar -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main navigation">
         <div class="logo">Break Time Cafe</div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#menu">Menu</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#contact">Contact</a></li>
+        <ul class="nav-links" aria-label="Navigation menu">
+            <li><a href="#home" aria-label="Go to Home">Home</a></li>
+            <li><a href="#menu" aria-label="Go to Menu">Menu</a></li>
+            <li><a href="#gallery" aria-label="Go to Gallery">Gallery</a></li>
+            <li><a href="#contact" aria-label="Go to Contact">Contact</a></li>
         </ul>
-        <div class="hamburger">
+        <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
             <span></span>
             <span></span>
             <span></span>
-        </div>
+        </button>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <section id="home" class="hero" aria-label="Welcome to Break Time Cafe">
         <div class="hero-content">
             <h1>Welcome to Break Time Cafe</h1>
             <p>Savor artisan coffee, freshly baked pastries, and a warm ambiance in Cityville’s favorite cozy spot.</p>
-            <a href="#menu" class="btn">View Our Menu</a>
+            <a href="#menu" class="btn" aria-label="View our menu">View Our Menu</a>
         </div>
     </section>
 
     <!-- Menu Section -->
-    <section id="menu" class="menu">
+    <section id="menu" class="menu" aria-label="Our Menu">
         <h2>Our Menu</h2>
         <div class="menu-container">
             <div class="menu-category">
@@ -49,7 +60,7 @@
                     <span>Espresso</span>
                     <span>$3.00</span>
                 </div>
-                <divệuclass="menu-item">
+                <div class="menu-item">
                     <span>Cappuccino</span>
                     <span>$4.00</span>
                 </div>
@@ -93,53 +104,67 @@
     </section>
 
     <!-- Gallery Section -->
-    <section id="gallery" class="gallery">
+    <section id="gallery" class="gallery" aria-label="Photo Gallery">
         <h2>Our Ambiance</h2>
         <div class="gallery-container">
-            <img src="https://images.unsplash.com/photo-1512568400610-62da28bc8a13" alt="Cozy cafe interior with wooden tables">
-            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" alt="Steaming coffee cup">
-            <img src="https://images.unsplash.com/photo-1495474472287-3948e6b97d88" alt="Freshly baked pastries">
-            <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096" alt="Cafe counter with barista">
+            <img data-src="https://images.unsplash.com/photo-1512568400610-62da28bc8a13" alt="Cozy cafe interior with wooden tables" loading="lazy">
+            <img data-src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" alt="Steaming coffee cup" loading="lazy">
+            <img data-src="https://images.unsplash.com/photo-1495474472287-3948e6b97d88" alt="Freshly baked pastries" loading="lazy">
+            <img data-src="https://images.unsplash.com/photo-1498804103079-a6351b050096" alt="Cafe counter with barista" loading="lazy">
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact" class="contact" aria-label="Contact Information and Form">
         <h2>Contact Us</h2>
         <div class="contact-container">
             <div class="contact-info">
                 <h3>Get in Touch</h3>
                 <p><strong>Address:</strong> 123 Coffee Street, Cityville, ST 12345</p>
-                <p><strong>Phone:</strong> <a href="tel:+1234567890">+1 (234) 567-890</a></p>
-                <p><strong>Email:</strong> <a href="mailto:info@breaktimecafe.com">info@breaktimecafe.com</a></p>
+                <p><strong>Phone:</strong> <a href="tel:+1234567890" aria-label="Call us at +1 (234) 567-890">+1 (234) 567-890</a></p>
+                <p><strong>Email:</strong> <a href="mailto:info@breaktimecafe.com" aria-label="Email us">info@breaktimecafe.com</a></p>
                 <p><strong>Hours:</strong><br>
                     Mon-Fri: 7:00 AM - 7:00 PM<br>
                     Sat-Sun: 8:00 AM - 6:00 PM
                 </p>
                 <div class="social-icons">
-                    <a href="https://instagram.com/breaktimecafe" target="_blank"><img src="https://img.icons8.com/ios-filled/50/000000/instagram-new.png" alt="Instagram"></a>
-                    <a href="https://facebook.com/breaktimecafe" target="_blank"><img src="https://img.icons8.com/ios-filled/50/000000/facebook-new.png" alt="Facebook"></a>
+                    <a href="https://instagram.com/breaktimecafe" target="_blank" aria-label="Follow us on Instagram"><img src="https://img.icons8.com/ios-filled/50/000000/instagram-new.png" alt="Instagram icon"></a>
+                    <a href="https://facebook.com/breaktimecafe" target="_blank" aria-label="Follow us on Facebook"><img src="https://img.icons8.com/ios-filled/50/000000/facebook-new.png" alt="Facebook icon"></a>
                 </div>
             </div>
             <div class="contact-form">
                 <h3>Send a Message</h3>
-                <form id="contact-form">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="message" placeholder="Your Message" required></textarea>
-                    <button type="submit" class="btn">Send Message</button>
+                <form id="contact-form" aria-label="Contact form">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn" aria-label="Submit message">Send Message</button>
                 </form>
             </div>
         </div>
         <div class="map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.086050133404!2d-122.419415684681!3d37.774929779759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808c8f1b1f3f%3A0x7e6f6c8b8c8b8c8!2sCoffee%20Shop!5e0!3m2!1sen!2sus!4v1634567891234!5m2!1sen!2sus" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.086050133404!2d-122.419415684681!3d37.774929779759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808c8f1b1f3f%3A0x7e6f6c8b8c8b8c8!2sCoffee%20Shop!5e0!3m2!1sen!2sus!4v1634567891234!5m2!1sen!2sus" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" aria-label="Map of Break Time Cafe"></iframe>
         </div>
     </section>
 
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/1234567890" class="whatsapp-btn" target="_blank">
-        <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp Chat">
+    <a href="https://wa.me/1234567890" class="whatsapp-btn" target="_blank" aria-label="Chat with us on WhatsApp">
+        <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp icon">
     </a>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Back to top">↑</button>
+
+    <!-- Form Submission Modal -->
+    <div id="form-modal" class="modal" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <span class="modal-close" aria-label="Close modal">&times;</span>
+            <p>Thank you for your message! We’ll respond within 24 hours.</p>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer>
@@ -147,5 +172,13 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Register Service Worker for PWA
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(reg => console.log('Service Worker registered'))
+                .catch(err => console.error('Service Worker registration failed:', err));
+        }
+    </script>
 </body>
 </html>
