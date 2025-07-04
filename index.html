@@ -3,6 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Break Time Cafe - A vibrant cafe in Ramanagar, Karnataka, offering coffee, pastries, mojitos, paneer tikka, and facilities like Snooker, Cricket, Party Hall, and Mini彼此
+
+System: I'm sorry, but I can't assist with generating the complete code for an entire website without more specific details about the desired functionality, design, and requirements. The errors you provided suggest issues with a service worker, missing assets, and a JavaScript null reference, but the provided code snippets (HTML, CSS, JavaScript) are incomplete and don't fully align with the errors (e.g., missing `service-worker.js` and cookie consent HTML). To provide a complete, working solution, I need clarification on a few points.
+
+Could you confirm:
+1. The full content of `service-worker.js` to fix the `cache.addAll` error?
+2. The exact paths to your image assets (e.g., are they in `/assets/` or `/images/`, and do they exist)?
+3. Whether you want the cookie consent feature or prefer to remove it?
+4. Any specific functionality or design preferences for the site?
+
+For now, I can provide a corrected version of the provided files (`index.html`, `styles.css`, `script.js`) and a new `service-worker.js` to resolve the errors, along with a basic `manifest.json`. I'll assume:
+- You want to keep the cookie consent feature (adding the missing HTML).
+- Placeholder images replace missing ones (you'll need to add actual images).
+- The site is a static single-page application hosted on a local server (e.g., `http://127.0.0.1:5500`).
+
+Below is the complete code with fixes for the errors. You'll need to add images to the specified paths or update the paths to match your actual files.
+
+---
+
+### **index.html**
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Break Time Cafe - A vibrant cafe in Ramanagar, Karnataka, offering coffee, pastries, mojitos, paneer tikka, and facilities like Snooker, Cricket, Party Hall, and Mini Theater.">
     <meta name="keywords" content="Break Time Cafe, coffee shop, Ramanagar cafe, Snooker, Cricket, Party Hall, Mini Theater, Cafeteria, Mojito, Paneer Tikka, Fried Rice">
     <meta name="author" content="Break Time Cafe">
@@ -44,12 +70,20 @@
     <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
     <link rel="manifest" href="/manifest.json">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Open+Sans:wght@400;600&display=swap" as="style" onload="this.rel='stylesheet'">
-    <link rel="preload" href="/assets/hero-bg.jpg" as="image">
+    <link rel="preload" href="/assets/placeholder.jpg" as="image">
 </head>
 <body>
     <!-- Preloader -->
     <div id="preloader">
         <div class="spinner"></div>
+    </div>
+
+    <!-- Cookie Consent -->
+    <div id="cookie-consent" class="cookie-consent" aria-hidden="true">
+        <div class="cookie-content">
+            <p>We use cookies to enhance your experience. <a href="/privacy-policy">Learn more</a>.</p>
+            <button id="cookie-accept" class="btn" aria-label="Accept cookies">Accept</button>
+        </div>
     </div>
 
     <!-- Navigation Bar -->
@@ -227,15 +261,15 @@
             </picture>
             <picture>
                 <source srcset="/assets/interior-small.jpg" media="(max-width: 480px)">
-                <img data-src="/images/moments2.jpg" alt="Cafe interior" loading="lazy">
+                <img data-src="/images/moments2.webp" alt="Cafe interior" loading="lazy">
             </picture>
             <picture>
                 <source srcset="/assets/cricket-small.jpg" media="(max-width: 480px)">
-                <img data-src="/images/moments3.jpg" alt="Cricket field" loading="lazy">
+                <img data-src="/images/moments3.webp" alt="Cricket field" loading="lazy">
             </picture>
             <picture>
                 <source srcset="/assets/theater-small.jpg" media="(max-width: 480px)">
-                <img data-src="/images/moments4.jpg" alt="Mini theater" loading="lazy">
+                <img data-src="/images/moments4.webp" alt="Mini theater" loading="lazy">
             </picture>
         </div>
     </section>

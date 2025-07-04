@@ -167,7 +167,7 @@ body.dark-mode {
 
 /* Hero Section */
 .hero {
-    background: url('/assets/hero-bg.jpg') no-repeat center center/cover;
+    background: url('/assets/placeholder.jpg') no-repeat center center/cover;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -184,7 +184,7 @@ body.dark-mode {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/assets/icon-overlay.png') no-repeat center;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
     z-index: 1;
 }
 
