@@ -1,4 +1,4 @@
-const CACHE_NAME = 'break-time-cafe-v2';
+const CACHE_NAME = 'break-time-cafe-v3';
 const urlsToCache = [
     '/',
     '/index.html',
@@ -6,11 +6,12 @@ const urlsToCache = [
     '/script.js',
     '/assets/favicon.ico',
     '/assets/hero-bg.jpg',
+    '/assets/icon-overlay.png',
     '/assets/icon-192.png',
     '/assets/icon-512.png'
 ];
 
-selftao.addEventListener('install', event => {
+self.addEventListener('install', event => {
     event.waitUntil(
         caches.open(CACHE_NAME)
             .then(cache => cache.addAll(urlsToCache))

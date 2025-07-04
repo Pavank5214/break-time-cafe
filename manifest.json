@@ -1,10 +1,10 @@
 {
     "name": "Break Time Cafe",
     "short_name": "Break Time",
-    "description": "Cozy neighborhood cafe in Cityville serving artisan coffee and pastries.",
+    "description": "A vibrant cafe in Ramanagar offering coffee, pastries, Snooker, Cricket, and more.",
     "start_url": "/",
     "display": "standalone",
-    "background_color": "#f8f1e9",
+    "background_color": "#e6f0fa",
     "theme_color": "#6b4e31",
     "icons": [
         {

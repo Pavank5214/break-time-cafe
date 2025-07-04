@@ -98,7 +98,7 @@ function initForms() {
 
 /* Lazy Load Images */
 function initLazyLoad() {
-    const images = document.querySelectorAll('.gallery img, .specials img');
+    const images = document.querySelectorAll('.gallery img, .specials img, .facilities img');
     const options = {
         rootMargin: '0px',
         threshold: 0.1

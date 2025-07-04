@@ -3,37 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Break Time Cafe - Your cozy neighborhood cafe in Cityville serving artisan coffee, fresh pastries, and hearty meals.">
-    <meta name="keywords" content="Break Time Cafe, coffee shop, pastries, Cityville cafe, breakfast, lunch, coffee">
+    <meta name="description" content="Break Time Cafe - A vibrant cafe in Ramanagar, Karnataka, offering coffee, pastries, mojitos, paneer tikka, and facilities like Snooker, Cricket, Party Hall, and Mini Theater.">
+    <meta name="keywords" content="Break Time Cafe, coffee shop, Ramanagar cafe, Snooker, Cricket, Party Hall, Mini Theater, Cafeteria, Mojito, Paneer Tikka, Fried Rice">
     <meta name="author" content="Break Time Cafe">
     <meta name="robots" content="index, follow">
     <!-- Open Graph for Social Media -->
-    <meta property="og:title" content="Break Time Cafe - Cozy Coffee & Pastries">
-    <meta property="og:description" content="Visit Break Time Cafe in Cityville for artisan coffee, fresh pastries, and a warm ambiance.">
+    <meta property="og:title" content="Break Time Cafe - A Break for Every Passion">
+    <meta property="og:description" content="Visit Break Time Cafe in Ramanagar for coffee, mojitos, paneer tikka, and exciting facilities like Snooker and Cricket.">
     <meta property="og:image" content="/assets/og-image.jpg">
     <meta property="og:url" content="https://breaktimecafe.com">
     <meta property="og:type" content="website">
     <!-- Structured Data for SEO -->
-    <script type="application application/ld+json">
+    <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "CafeOrCoffeeShop",
         "name": "Break Time Cafe",
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": "123 Coffee Street",
-            "addressLocality": "Cityville",
-            "addressRegion": "ST",
-            "postalCode": "12345",
-            "addressCountry": "US"
+            "streetAddress": "Opp Shantiniketan School",
+            "addressLocality": "Ramanagar",
+            "addressRegion": "Karnataka",
+            "postalCode": "562159",
+            "addressCountry": "IN"
         },
-        "telephone": "+1234567890",
-        "openingHours": "Mo-Fr 07:00-19:00, Sa-Su 08:00-18:00",
+        "telephone": "+918147871431",
+        "openingHours": "Mo-Su 10:00-23:00",
         "servesCuisine": "Cafe",
+        "amenityFeature": [
+            {"@type": "SportsActivityLocation", "name": "Snooker"},
+            {"@type": "SportsActivityLocation", "name": "Cricket"},
+            {"@type": "EventVenue", "name": "Party Hall"},
+            {"@type": "MovieTheater", "name": "Mini Theater"}
+        ],
         "url": "https://breaktimecafe.com"
     }
     </script>
-    <title>Break Time Cafe - Cozy Coffee & Pastries in Cityville</title>
+    <title>Break Time Cafe - A Break for Every Passion</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
     <link rel="manifest" href="/manifest.json">
@@ -46,14 +52,6 @@
         <div class="spinner"></div>
     </div>
 
-    <!-- Cookie Consent Popup -->
-    <div id="cookie-consent" class="cookie-consent" role="dialog" aria-hidden="true">
-        <div class="cookie-content">
-            <p>We use cookies to enhance your experience. <a href="/privacy-policy" aria-label="Read our privacy policy">Learn more</a>.</p>
-            <button id="cookie-accept" class="btn" aria-label="Accept cookies">Accept</button>
-        </div>
-    </div>
-
     <!-- Navigation Bar -->
     <nav class="navbar" aria-label="Main navigation">
         <div class="logo">Break Time Cafe</div>
@@ -61,6 +59,7 @@
             <li><a href="#home" aria-label="Go to Home">Home</a></li>
             <li><a href="#specials" aria-label="Go to Today’s Specials">Specials</a></li>
             <li><a href="#menu" aria-label="Go to Menu">Menu</a></li>
+            <li><a href="#facilities" aria-label="Go to Facilities">Facilities</a></li>
             <li><a href="#gallery" aria-label="Go to Gallery">Gallery</a></li>
             <li><a href="#testimonials" aria-label="Go to Testimonials">Testimonials</a></li>
             <li><a href="#contact" aria-label="Go to Contact">Contact</a></li>
@@ -71,18 +70,18 @@
             <span></span>
         </button>
         <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
-            <span class="icon">🌙</span>
+            <span class="icon"></span>
         </button>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero" aria-label="Welcome to Break Time Cafe">
         <div class="hero-content">
-            <h1>Welcome to Break Time Cafe</h1>
-            <p>Savor artisan coffee, freshly baked pastries, and a warm ambiance in Cityville’s favorite cozy spot.</p>
+            <h1>Break Time Cafe</h1>
+            <p>A break for every passion - Coffee, Snooker, Cricket & more!</p>
             <div class="hero-buttons">
                 <a href="#menu" class="btn" aria-label="View our menu">View Our Menu</a>
-                <a href="https://order.toasttab.com" class="btn btn-secondary" target="_blank" aria-label="Order online">Order Online</a>
+                <a href="/book-now" class="btn btn-secondary" aria-label="Book now">Book Now</a>
             </div>
         </div>
     </section>
@@ -92,14 +91,19 @@
         <h2>Today’s Specials</h2>
         <div class="specials-container">
             <div class="special-item">
-                <img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0" alt="Pumpkin Spice Latte" loading="lazy">
-                <h3>Pumpkin Spice Latte</h3>
-                <p>Seasonal favorite with cinnamon and nutmeg. <span>$4.75</span></p>
+                <img src="/images/veg-manchow-soup.jpg" alt="Veg Manchow Soup" loading="lazy">
+                <h3>Veg Manchow Soup</h3>
+                <p>Today’s special soup with a spicy kick.</p>
             </div>
             <div class="special-item">
-                <img src="https://images.unsplash.com/photo-1511920170033-f8396924c312" alt="Breakfast Burrito" loading="lazy">
-                <h3>Breakfast Burrito</h3>
-                <p>Eggs, avocado, and salsa in a warm tortilla. <span>$6.50</span></p>
+                <img src="/images/margherita-pizza.jpg" alt="Margherita Pizza" loading="lazy">
+                <h3>Margherita Pizza</h3>
+                <p>Classic pizza with fresh ingredients.</p>
+            </div>
+            <div class="special-item">
+                <img src="/images/today-special-noodles.jpg" alt="Dessert Noodles" loading="lazy">
+                <h3>Today Special Noodles</h3>
+                <p>Unique dessert noodle treat.</p>
             </div>
         </div>
     </section>
@@ -108,74 +112,130 @@
     <section id="menu" class="menu" aria-label="Our Menu">
         <h2>Our Menu</h2>
         <div class="menu-container">
-            <div class="menu-category">
-                <h3>Coffee & Beverages</h3>
-                <div class="menu-item">
-                    <span>Espresso</span>
-                    <span>$3.00</span>
-                </div>
-                <div class="menu-item">
-                    <span>Cappuccino</span>
-                    <span>$4.00</span>
-                </div>
-                <div class="menu-item">
-                    <span>Iced Latte</span>
-                    <span>$4.50</span>
-                </div>
-                <div class="menu-item">
-                    <span>Matcha Latte</span>
-                    <span>$5.00</span>
-                </div>
-                <div class="menu-item">
-                    <span>Fresh Orange Juice</span>
-                    <span>$3.50</span>
-                </div>
+            <details class="menu-category">
+                <summary>Soup</summary>
+                <div class="menu-item"><span>Veg Manchow Soup</span> <span>(Today Special)</span></div>
+                <div class="menu-item"><span>Cream of Mushroom</span></div>
+                <div class="menu-item"><span>Chicken Manchow Soup</span></div>
+                <div class="menu-item"><span>Cream of Chicken Soup</span></div>
+            </details>
+            <details class="menu-category">
+                <summary>Pizza</summary>
+                <div class="menu-item"><span>Margherita Pizza</span> <span>(Today Special)</span></div>
+                <div class="menu-item"><span>Break Time Spl Pizza</span></div>
+                <div class="menu-item"><span>Paneer Sezwan Pizza</span></div>
+                <div class="menu-item"><span>Chicken Sezwan Pizza</span></div>
+                <div class="menu-item"><span>Break Time Spl Chicken Pizza</span></div>
+            </details>
+            <details class="menu-category">
+                <summary>Pasta</summary>
+                <div class="menu-item"><span>Fusili Pasta</span> <span>(Choice of Pesto, Aristo, Alfredo)</span></div>
+                <div class="menu-item"><span>Spaghetti Pasta</span></div>
+                <div class="menu-item"><span>Stirrer</span></div>
+            </details>
+            <details class="menu-category">
+                <summary>BBQ Paneer</summary>
+                <div class="menu-item"><span>Africano Paneer</span></div>
+                <div class="menu-item"><span>Classic Peri-Peri Paneer</span></div>
+                <div class="menu-item"><span>Paneer Achari Tikka</span></div>
+                <div class="menu-item"><span>Paneer Manchurian Tikka</span></div>
+                <div class="menu-item"><span>Paneer Hot Garlic Tikka</span></div>
+                <div class="menu-item"><span>Paneer Sezwan Dry</span></div>
+            </details>
+            <details class="menu-category">
+                <summary>Rice & Noodles</summary>
+                <div class="menu-item"><span>Veg Honnong Fried Rice & Noodles</span></div>
+                <div class="menu-item"><span>Veg Sezwan Fried Rice & Noodles</span></div>
+                <div class="menu-item"><span>Break Time Spl Fried Rice & Noodles</span></div>
+                <div class="menu-item"><span>Chicken Honnong Fried Rice & Noodles</span></div>
+                <div class="menu-item"><span>Chicken Sezwan Fried Rice & Noodles</span></div>
+                <div class="menu-item"><span>Break Time Spl Rice & Noodles</span></div>
+            </details>
+            <details class="menu-category">
+                <summary>Mojitos</summary>
+                <div class="menu-item"><span>Mint Mojito</span></div>
+                <div class="menu-item"><span>Cranberry Mojito</span></div>
+                <div class="menu-item"><span>Green Apple Mojito</span></div>
+                <div class="menu-item"><span>Blue Curaco Mojito</span></div>
+                <div class="menu-item"><span>Guava Mojito</span></div>
+                <div class="menu-item"><span>Rose Mojito</span></div>
+                <div class="menu-item"><span>Fresh Lime Soda</span></div>
+            </details>
+            <details class="menu-category">
+                <summary>Dessert</summary>
+                <div class="menu-item"><span>Today Special Noodles</span> <span>(Today Special)</span></div>
+            </details>
+            <details class="menu-category">
+                <summary>Toast</summary>
+                <div class="menu-item"><span>Cheese Garlic Bread</span></div>
+                <div class="menu-item"><span>Cheese Chilly Toast</span></div>
+            </details>
+            <details class="menu-category">
+                <summary>Sandwich</summary>
+                <div class="menu-item"><span>Sandwich</span></div>
+                <div class="menu-item"><span>Burger</span></div>
+                <div class="menu-item"><span>Honey Chilly Potato</span></div>
+                <div class="menu-item"><span>Crispy Chilly Potato</span></div>
+            </details>
+            <details class="menu-category">
+                <summary>Non-Veg Lollipop</summary>
+                <div class="menu-item"><span>Chicken BBQ</span></div>
+                <div class="menu-item"><span>Africano Chicken</span></div>
+                <div class="menu-item"><span>Classic Peri-Peri Chicken</span></div>
+                <div class="menu-item"><span>Chicken Manchurian Tikka</span></div>
+                <div class="menu-item"><span>Chicken Hot Garlic Tikka</span></div>
+                <div class="menu-item"><span>Chicken Wings</span></div>
+                <div class="menu-item"><span>Hot Chilly Dry</span></div>
+            </details>
+        </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section id="facilities" class="facilities" aria-label="Our Facilities">
+        <h2>Our Facilities</h2>
+        <div class="facilities-container">
+            <div class="facility-item">
+                <img src="/images/snooker.jpg" alt="Snooker table" loading="lazy">
+                <h3>Snooker</h3>
             </div>
-            <div class="menu-category">
-                <h3>Food & Pastries</h3>
-                <div class="menu-item">
-                    <span>Butter Croissant</span>
-                    <span>$2.50</span>
-                </div>
-                <div class="menu-item">
-                    <span>Avocado Toast</span>
-                    <span>$6.00</span>
-                </div>
-                <div class="menu-item">
-                    <span>Grilled Cheese Sandwich</span>
-                    <span>$5.50</span>
-                </div>
-                <div class="menu-item">
-                    <span>Blueberry Muffin</span>
-                    <span>$3.00</span>
-                </div>
-                <div class="menu-item">
-                    <span>Caesar Salad</span>
-                    <span>$7.00</span>
-                </div>
+            <div class="facility-item">
+                <img src="/images/cricket.jpg" alt="Cricket field" loading="lazy">
+                <h3>Cricket</h3>
+            </div>
+            <div class="facility-item">
+                <img src="/images/party-hall.jpg" alt="Party hall" loading="lazy">
+                <h3>Party Hall</h3>
+            </div>
+            <div class="facility-item">
+                <img src="/images/mini-theater.jpg" alt="Mini theater" loading="lazy">
+                <h3>Mini Theater</h3>
+            </div>
+            <div class="facility-item">
+                <img src="/images/cafeteria.jpg" alt="Cafeteria" loading="lazy">
+                <h3>Cafeteria</h3>
             </div>
         </div>
     </section>
 
     <!-- Gallery Section -->
     <section id="gallery" class="gallery" aria-label="Photo Gallery">
-        <h2>Our Ambiance</h2>
+        <h2>Our Moments</h2>
         <div class="gallery-container">
             <picture>
-                <source srcset="/assets/cafe-interior-small.jpg" media="(max-width: 480px)">
-                <img data-src="https://images.unsplash.com/photo-1512568400610-62da28bc8a13" alt="Cozy cafe interior with wooden tables" loading="lazy">
+                <source srcset="/assets/event-small.jpg" media="(max-width: 480px)">
+                <img data-src="/images/moments1.jpg" alt="Event with decorations" loading="lazy">
             </picture>
             <picture>
-                <source srcset="/assets/coffee-cup-small.jpg" media="(max-width: 480px)">
-                <img data-src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" alt="Steaming coffee cup" loading="lazy">
+                <source srcset="/assets/interior-small.jpg" media="(max-width: 480px)">
+                <img data-src="/images/moments2.jpg" alt="Cafe interior" loading="lazy">
             </picture>
             <picture>
-                <source srcset="/assets/pastries-small.jpg" media="(max-width: 480px)">
-                <img data-src="https://images.unsplash.com/photo-1495474472287-3948e6b97d88" alt="Freshly baked pastries" loading="lazy">
+                <source srcset="/assets/cricket-small.jpg" media="(max-width: 480px)">
+                <img data-src="/images/moments3.jpg" alt="Cricket field" loading="lazy">
             </picture>
             <picture>
-                <source srcset="/assets/counter-small.jpg" media="(max-width: 480px)">
-                <img data-src="https://images.unsplash.com/photo-1498804103079-a6351b050096" alt="Cafe counter with barista" loading="lazy">
+                <source srcset="/assets/theater-small.jpg" media="(max-width: 480px)">
+                <img data-src="/images/moments4.jpg" alt="Mini theater" loading="lazy">
             </picture>
         </div>
     </section>
@@ -185,12 +245,12 @@
         <h2>What Our Customers Say</h2>
         <div class="testimonials-container">
             <div class="testimonial">
-                <p>“Best coffee in Cityville! The atmosphere is so welcoming.”</p>
-                <span>- Sarah M.</span>
+                <p>“Amazing place for events and coffee!”</p>
+                <span>- Priya S.</span>
             </div>
             <div class="testimonial">
-                <p>“Love their avocado toast and friendly staff!”</p>
-                <span>- John D.</span>
+                <p>“Great snooker and friendly staff!”</p>
+                <span>- Ravi K.</span>
             </div>
         </div>
     </section>
@@ -201,12 +261,11 @@
         <div class="contact-container">
             <div class="contact-info">
                 <h3>Get in Touch</h3>
-                <p><strong>Address:</strong> 123 Coffee Street, Cityville, ST 12345</p>
-                <p><strong>Phone:</strong> <a href="tel:+1234567890" aria-label="Call us at +1 (234) 567-890">+1 (234) 567-890</a></p>
+                <p><strong>Address:</strong> Opp Shantiniketan School, Ramanagar, Karnataka - 562159</p>
+                <p><strong>Phone:</strong> <a href="tel:+918147871431" aria-label="Call us at +91 81478 71431">+91 81478 71431</a></p>
                 <p><strong>Email:</strong> <a href="mailto:info@breaktimecafe.com" aria-label="Email us">info@breaktimecafe.com</a></p>
                 <p><strong>Hours:</strong><br>
-                    Mon-Fri: 7:00 AM - 7:00 PM<br>
-                    Sat-Sun: 8:00 AM - 6:00 PM
+                    Daily: 10:00 AM - 11:00 PM
                 </p>
                 <div class="social-icons">
                     <a href="https://instagram.com/breaktimecafe" target="_blank" aria-label="Follow us on Instagram"><img src="https://img.icons8.com/ios-filled/50/000000/instagram-new.png" alt="Instagram icon"></a>
@@ -228,12 +287,12 @@
             </div>
         </div>
         <div class="map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.086050133404!2d-122.419415684681!3d37.774929779759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808c8f1b1f3f%3A0x7e6f6c8b8c8b8c8!2sCoffee%20Shop!5e0!3m2!1sen!2sus!4v1634567891234!5m2!1sen!2sus" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" aria-label="Map of Break Time Cafe"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3882.123!2d77.0500!3d12.7333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae145f!2sBreak%20Time%20Cafe!5e0!3m2!1sen!2sin!4v1720114900!5m2!1sen!2sin" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" aria-label="Map of Break Time Cafe"></iframe>
         </div>
     </section>
 
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/1234567890" class="whatsapp-btn" target="_blank" aria-label="Chat with us on WhatsApp">
+    <a href="https://wa.me/918147871431" class="whatsapp-btn" target="_blank" aria-label="Chat with us on WhatsApp">
         <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp icon">
     </a>
 
@@ -263,7 +322,6 @@
 
     <script src="script.js"></script>
     <script>
-        // Register Service Worker
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('/service-worker.js')
                 .then(reg => console.log('Service Worker registered'))
